@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function(){
+ document.getElementById("boton1").addEventListener("click",cambiar,false);
+
+});
+function cambiar(){
+  //$("img").fadeOut(1000).fadeIn(1000).width("310");
+  //Buena cosa pero como desarrollador nada es vanal todo tiene su valor
+  //por ejemplo aqui puedo entender la importancia del punto
+$("img").each(function(){
+     $(this).fadeOut(1000).fadeIn(1000).width("310");
+});
+}
+    </script>
+    <style>
+      section{
+        float: left;
+        border: 3px black solid;
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+      }
+      .funcion{
+        background: yellow;
+        margin-left: 100px;
+      }
+    </style>
+ </head>
+<body>
+    <section id="section1" >
+<img src="fondo1.jpg" width="200px" height="200px">
+    </section>
+    <section id="section2">
+      <img src="fondo2.jpg" width="200px" height="200px">
+
+    </section>
+    <section id="section3">
+      <img src="fondo3.jpg" width="200px" height="200px">
+    </section>
+
+    <button id="boton1">
+        Aceptar
+    </button>
+</body>
+
+</html>

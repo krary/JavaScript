@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <header>
+      <h1>Noticias</h1>
+   </header>
+   <style>
+    header{
+        margin-left: 600px;
+        font-family: Gloucester MT;
+        font-size: 30px;
+    }
+    #section1{
+        margin-left: 100px;
+        float: left;
+        border: 3px black solid;
+
+    }
+    #section2{
+        margin-left: 100px;
+        float:left;
+        border: 3px black solid;
+
+    }
+    #section3{
+        margin-left: 100px;
+        float:left;
+        border: 3px black solid;
+
+    }
+
+    p{
+        margin:1px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
+    #s1me{
+        margin-left: 50px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    #s2me{
+        margin-left: 50px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    #l1,#l2,#l3{
+        margin-left:50px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    #s3me{
+        margin-left: 50px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+
+
+   </style>
+</head>
+   <body>
+
+<section id="section1"><br>
+
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <button id="s1ma" type="button">Mas cerca</button>
+    <button id="l1">Modo Lectura</button>
+    <button id="s1me">Mas Lejos</button>
+
+</section>
+<section id="section2"><br>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <button id="s2ma">Mas cerca</button>
+    <button id="l2">Modo Lectura</button>
+    <button id="s2me">Mas Lejos</button>
+
+
+</section>
+<section id="section3"><br>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <p>hola lisandro sarmiento caballero sarmiento caballero</p>
+    <button id="s3ma">Mas cerca</button>
+    <button id="l3">Modo Lectura</button>
+    <button id="s3me">Mas Lejos</button>
+
+
+    </section>
+
+    <script>
+$(document).ready(function(){
+var botones = document.querySelectorAll("button");
+for(var i =0;i<6;i++){
+    botones[i].addEventListener("click",aumentar,false);
+}
+
+});
+function aumentar(e){
+
+   var variable;
+var defecto;
+    if(e.target==s1ma){
+     variable = $("#section1");
+     defecto = $(variable).css("font-size");
+    defecto = parseInt(defecto);
+    $(variable).css("font-size",defecto*1.35);
+
+    }
+    else if(e.target==s1me){
+     variable = $("#section1");
+     defecto = $(variable).css("font-size");
+    defecto = parseInt(defecto);
+    $(variable).css("font-size",defecto*0.95);
+
+    }
+    else if(e.target==s2ma){
+     variable = $("#section1");
+     defecto = $(variable).css("font-size");
+    defecto = parseInt(defecto);
+    $(variable).css("font-size",defecto*1.35);
+
+    }
+    else if(e.target==s2me){
+     variable = $("#section2");
+     defecto = $(variable).css("font-size");
+    defecto = parseInt(defecto);
+    $(variable).css("font-size",defecto*0.95);
+
+    }
+    else if(e.target==s3ma){
+     variable = $("#section3");
+     defecto = $(variable).css("font-size");
+    defecto = parseInt(defecto);
+    $(variable).css("font-size",defecto*1.35);
+
+    }
+    else if(e.target==s3me){
+     variable = $("#section3");
+     defecto = $(variable).css("font-size");
+    defecto = parseInt(defecto);
+    $(variable).css("font-size",defecto*0.95);
+
+    }
+    //--------------------------------------------------
+    else if(e.target==l1){
+
+        variable = "#section1";
+      $(variable).css({"background":"black",
+      "font-size":"20px",
+      "text-align":"justify",
+    "color":"white"});
+
+
+    }
+    else if(e.target==l2){
+
+variable = "#section2";
+$(variable).css({"background":"black",
+"font-size":"20px",
+"text-align":"justify",
+"color":"white"});
+
+
+}
+else if(e.target==l3){
+
+variable = "#section3";
+$(variable).css({"background":"black",
+"font-size":"20px",
+"text-align":"justify",
+"color":"white"});
+
+
+}
+
+
+
+
+
+
+}
+</script>
+</body>
+
+</html>

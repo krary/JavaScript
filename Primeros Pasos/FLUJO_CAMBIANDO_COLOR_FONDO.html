@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+function comenzar(){
+    var cuerpo = document.getElementById("cuerpo");
+    var boton1= document.getElementById("boton2");
+
+    boton1.addEventListener("click",function(){
+        var mensaje1 = prompt("Escriba de que color quiere la pantalla");
+        var mensaje = mensaje1.toLowerCase();
+        if(mensaje == "azul"){
+            cuerpo.style.color="greenyellow";
+            cuerpo.style.background="blue";
+        }
+        else if(mensaje == "rojo"){
+            cuerpo.style.color="greenyellow";
+            cuerpo.style.background="red";
+        }
+        else if(mensaje == "verde"){
+            cuerpo.style.color= "greenyellow";
+            cuerpo.style.fontFamily ="Arial Black";
+            cuerpo.style.background="green";
+        }
+        else{
+            alert("Tienes que escribir Verde/Azul/Rojo");
+        }
+    })
+}
+window.addEventListener("load",comenzar,false);
+</script>
+<style>
+    #nombre{
+        margin-left: 30px;
+        display: inline-block;
+        margin-top: 3px;
+    }
+    #edad{
+        margin-left: 55px;
+        display: inline-block;
+        margin-top: 3px;
+    }
+    #nie{
+        margin-left: 72px;
+        display: inline-block;
+        margin-top: 3px;
+    }
+    #boton2{
+        margin-top: 100px;
+    }
+    #section1{
+        margin-top: 300px;
+    }
+</style>
+
+</header>
+<body id="cuerpo">
+    <div>
+
+        <form>
+            NOMBRE :&nbsp;&nbsp;<input type="text" name="nombre" id="nombre" style="border: 2px black solid;"><br>
+            EDAD :&nbsp;&nbsp;<input type="text" name="edad" id="edad" style="border: 2px black solid;"><br>
+            NIE    :&nbsp;&nbsp;<input type="text" name="nie" id="nie" style="border: 2px black solid;"><br>
+        </form>
+    </div>
+ <button id="boton2">Colores</button>
+ <section id="section1"  style="display: none;">
+<button id="boton1">Ajuste Fondo..</button>
+<input type="text" name="colores" id="colores">
+</section>
+</body>
+
+</html>

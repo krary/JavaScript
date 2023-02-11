@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .destacaclase{
+        background-color: red;
+    }
+    .destacaclase2{
+    background-color:chartreuse;
+    }
+#div3{width: 300px;
+    height: 300px;
+    margin: 30px;
+    padding-top: 100px;
+
+}
+#uno,#dos,#tres, #cuatro,#cinco,#seis{
+    color: blue;
+}
+body{
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+</style>
+</head>
+<body>
+<div id="div1" style="float: left; margin-left: 200px;"><p style="float: left; font-family: Arial black;">Cursos Destacados</p>
+
+<input type="checkbox" style="float: left; margin-top: 20px; margin-left: 20px; border: 3px blue solid;" name="cursos" id="cursos" value="Cursos">
+</div>
+
+<div id="div2" style="float: left; margin-left: 500px;"><p style="float: left; font-family: Arial Black;">Informacion Adicional</p>
+    <input type="checkbox" style="float: left; margin-top: 22px; margin-left: 20px; border: 3px blue solid;" name="cursos1" id="cursos1" value="Informacion">
+    </div>
+
+    <div id="div3">
+      <a  id="uno" href="https://google.com"><strong>Google</strong></a><br>
+      <br>
+      <a  id="dos" href="https://youtu.be/oivLtfCSKRc?list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID"><strong>Pildoras Informaticas</strong></a><br>
+      <br>
+      <a id="tres"><strong>Remplazar y Remover</strong></a><br>
+      <br>
+      <a id="cuatro"><strong>Noticias de Google</strong></a><br>
+      <br>
+      <a id="cinco"><strong>Calculadora</strong></a>
+
+    </div>
+<script>
+$(document).ready(function(){
+//  $("a[href^='https://']").addClass("destacaclase");
+document.getElementById("cursos").addEventListener("click",resaltar,false);
+document.getElementById("cursos1").addEventListener("click",f2,false);
+//document.getElementById("cinco").addEventListener("click",f2,false);
+});
+function resaltar(){
+/*    $("#tres").removeClass("destacaclase2");
+    $("a[href^='https://']").addClass("destacaclase");
+
+*/
+$("#cuatro").toggleClass("destacaclase");
+};
+function f2(){
+    $("a[href^='https://']").removeClass("destacaclase");
+    $("#tres").toggleClass("destacaclase2");
+}
+</script>
+</body>
+
+
+</html>

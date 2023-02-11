@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+    <body>
+<img id="foto1" src="fondo1.jpg" width="200px" height="200px" style="margin-left: 200px;">
+<img id="foto2" src="fondo2.jpg" width="200px" height="200px" style="margin-left: 200px;">
+<img id="foto3" src="fondo3.jpg" width="200px" height="200px" style="margin-left: 200px;">
+<br>
+<br>
+<div id="div1" style="position: absolute; margin-left: 500px; width: 400px; height: 200px; border: 2px black solid; background: coral;">
+<label id="label1" style="position: absolute; font-family: Arial black;left: 39px; top: 39px;">Du kannst schreibt hiere</label>
+
+</div>
+    </body>
+    <script>
+        $(document).ready(function(){
+        $("#label1").hide();
+        $("#foto1").hover(mensaje_on,mensaje_of);
+        });
+        function mensaje_on(){
+     $("#label1").show();
+        };
+        function mensaje_of(){
+            $("#label1").hide();
+        };
+            </script>
+
+    </html>

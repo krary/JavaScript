@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div id="colecciones">
+<img id="imagen1" src="28476-matrix.jpg" width="200" height="200">
+<img id="imagen2" src="28476-matrix.jpg" width="200" height="200">
+<img id="imagen3" src="28476-matrix.jpg" width="200" height="200">
+<img id="imagen4" src="28476-matrix.jpg" width="200" height="200">
+</div>
+<div id="div1" style="width: 200px; height: 200px; position: absolute; padding-left: 50px; padding-top: 50px; background-color: red; border: 3px black solid;">
+
+<button style="width: 30px; height: 30px; border: 2px black solid; font-family: Arial Black; color: white; background-color: blue; padding: 1px; margin-right: 2px; margin-top: -111px;" id="boton1" >X</button>
+
+ </div>
+ <script>
+    $(document).ready(function(){
+        var elementos = document.querySelectorAll("#colecciones img")
+        for(var x=0;x<4;x++){
+elementos[x].addEventListener("click",carrito,false);
+        }
+    });
+    function cerrar(){
+        $("#imagen1").remove();
+    }
+    function carrito(e){
+        if(e.target==imagen1){
+            $("#imagen1").replaceWith("lisandro");
+        }
+        if(e.target==imagen2){
+            $("#imagen2").replaceWith("lisandro");
+        }
+
+
+    }
+ </script>
+ <style>
+    #l{
+        width: 100px;
+        height: 100px;
+        font-family: Arial Black;
+    }
+ </style>
+</body>
+
+
+</html>

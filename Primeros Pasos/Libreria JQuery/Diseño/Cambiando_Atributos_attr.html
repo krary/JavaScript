@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function(){
+          document.getElementById("img1").addEventListener("mouseover",cambiar,false);
+          document.getElementById("img1").addEventListener("mouseout",restaurar,false);
+        });
+
+
+        function cambiar(){
+            $("img").attr("src","28476-matrix.jpg");
+        }
+        function restaurar(){
+            $("img").attr("src","fondo.jpg");
+        }
+    </script>
+
+</head>
+<body>
+<img id="img1" src="fondo.jpg" width="200px" height="200px" style="border: 3px black solid;">
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+       $(document).ready(function(){
+        alert($("#div1").append("<p>Hay errores en el parrafo</p>"));
+
+       })
+    </script>
+    <style>
+        .hola{
+            display: inline-block;
+            border: 3px black solid;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+<div id="div1" style="color: blue; font-family: Arial Black; font-size: 32px; margin-left: 500px;"><strong>Pagina Web...</strong> </div>
+<div class="hola">
+Nombre: <input type="text" name="nombre" id="nombre">
+Apellidos: <input type="text" name="apellido" id="apellido">
+NickName: <input type="text" name="nickname" id="nickname">
+<input type="button" value="Aceptar" name="boton1" id="boton1">
+</div>
+<script>
+    var boton1 = document.getElementById("boton1");
+
+    boton1.addEventListener("click",function(){
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var nickname = document.getElementById("nickname").value;
+
+        if(nombre != "" && apellido!= ""  && nickname!= "" ){
+
+
+        }
+        else{
+            $("#nombre").after("Rellena este campo porfavor");
+        }
+
+    },false);
+</script>
+
+</body>
+
+
+</html>

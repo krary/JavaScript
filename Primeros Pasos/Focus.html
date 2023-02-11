@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-image: url("593749.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+        }
+input{
+    border: 3px black solid;
+    margin: auto;
+}
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+
+function f1(){
+
+    var nombre = prompt("Escriba su nombre");
+    if(nombre=="lisandro"){
+        alert("nombre correcto");
+    }
+    else{
+        alert("nombre incorrecto");
+    }
+
+   var boton1 = document.getElementById("boton1");
+   boton1.addEventListener("click",function(){
+    alert(t2);
+   },false);
+    var t1 = document.getElementById("texto1");
+    var t2 = document.getElementById("texto2").value;
+    var t3 = document.getElementById("texto3");
+
+    t3.focus();
+    t2.style.backgroundColor="red";
+    t3.value="escriba aqui";
+
+
+}
+
+    window.addEventListener("load",f1,false);
+</script>
+</head>
+<body>
+    <div>
+  <input type="text" name="texto1" id="texto1">
+  <input type="text" name="texto2" id="texto2">
+  <input type="text" name="texto3" id="texto3">
+  <input type="button" name="boton1" id="boton1" value="Aceptar">
+</div>
+
+</body>
+
+
+</html>

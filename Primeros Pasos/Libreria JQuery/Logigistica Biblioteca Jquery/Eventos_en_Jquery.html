@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<header>
+    <h2 style="margin-left: 600px; color: white;"><strong>Introduccion a Eventos</strong></h2>
+</header>
+    </head>
+ <style>
+
+ </style>
+
+
+
+    <body style="background: cornflowerblue;">
+        <div id="div1" style="padding: 10px;
+         border-left: 3px white solid;
+         border-right: 3px white solid; width: 800px;
+         height: 210px; margin-left: 400px; margin-top: 10px;"><br>
+<hr style="float: left; width: 30px; margin-left: 1px;">
+            <label style="color: white; float: left;">Formulario</label>
+            <hr style="float:left; color: black; width: 600px; border: 1px white solid; margin-left: 2px;">
+            <br>
+            <br>
+            <a href="https://www.google.com"><strong style="color: white; font-size: 20px;">Un link</strong></a>
+            <br>
+            <br>
+            <input  type="button" value="Un boton" name="boton1" id="boton1"><br>
+            <br>
+            <input type="text" name="texto1" id="texto1">
+
+        </div>
+        <script>
+       $(document).ready(function(){
+              $("a").mouseover(function(){
+                var variable = "<p>Estas pasando por arriba el raton presta atencion</p>";
+               $("#div1").append(variable);
+               $("#boton1").click(function(){
+                $(this).val("Mi boton");
+               });
+               $("#texto1").focus(function(){
+                $(this).val("Ahora vas escribit aqui");
+               });
+              })
+       });
+        </script>
+
+
+    </body>
+</html>

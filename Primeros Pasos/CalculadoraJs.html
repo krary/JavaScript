@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+        $("body").hide().fadeIn(3000);
+    });
+</script>
+
+<style>
+    div{
+        width: 364px;
+        height: 280px;
+        border-radius: 10px;
+        border: 50px black solid;
+padding: 2px;
+        border: 3px black solid;
+        background-image: url("593749.jpg");
+        background-size: cover;
+        background-repeat: repeat;}
+    tr{border: 1px black solid;}
+    td{color: greenyellow;
+        font-family: Arial Black;
+        border: 1px black solid;}
+    input{
+        /*padding: 3px;
+        margin-top: 3px;
+       margin-bottom: 3px;*/
+       margin-left: 1px;
+        width: 85px;
+        font-family: Arial Black;
+        border-radius: 10px;
+        background: cyan;
+    }
+    #texto{
+        width: 355px;
+        height: 100px;
+        background: black;
+        color: yellowgreen;}
+    #resultado{
+        width: 370px;
+      background: cyan;}
+</style>
+</head>
+<body>
+    <audio src="SamsungGalaxy.mp3" id="sonido"></audio>
+    <audio src="boton_1.mp3" id="sonido1"></audio>
+    <div>
+<table>
+    <tr><input type="text" name="texto" id="texto"></tr>
+    <tr>
+        <td><input type="button" value="7" name="siete" id="siete" ></td>
+      <td><input type="button" value="8" name="ocho" id="ocho"></td>
+      <td><input type="button" value="9" name="nueve" id="nueve" ></td>
+      <td><input type="button" value="+" name="sumar" id="sumar"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="6" name="seis" id="seis"></td>
+        <td><input type="button" value="5" name="cinco" id="cinco" ></td>
+        <td><input type="button" value="4" name="cuatro" id="cuatro"></td>
+        <td><input type="button" value="-" name="restar" id="restar"></td>
+        </tr>
+        <td><input type="button" value="3" name="tres" id="tres"></td>
+        <td><input type="button" value="2" name="dos" id="dos"></td>
+        <td><input type="button" value="1" name="uno" id="uno"></td>
+        <td><input type="button" value="*" name="multiplicacion" id="multiplicacion"></td>
+        </tr>
+        <td><input type="button" value="0" name="cero" id="cero"></td>
+      <td><input type="button" value="." name="punto" id="punto"></td>
+      <td><input type="button" value="," name="coma" id="coma"></td>
+      <td><input type="button" value="/" name="dividir" id="dividir"></td>
+      </tr>
+      <td><input style="display: none;" type="button" value="7"></td>
+      <td><input style="display: none;" type="button" value="8"></td>
+      <td><input style="display:none" type="button" value="9"></td>
+      <td><input  type="button" value="=" name="igual" id="igual"></td>
+      </tr></table>
+      <script>
+        var mas;
+        var menos;
+        var dividir;
+        var multiplicacion;
+        var clave = "";
+        menos = document.getElementById("menos");
+        dividir = document.getElementById("dividir");
+        var texto = document.getElementById("texto").value;
+        var igual;
+        var v1 = 0;
+        var v2 = 0;
+        var count=0;
+        function f1(){
+        sonido = document.getElementById("sonido");
+        sonido1 = document.getElementById("sonido1");
+        igual = document.getElementById("igual");
+        igual.addEventListener("click",operacion,
+            false);
+        restar = document.getElementById("restar");
+        restar.addEventListener("click",nn,false);
+        dividir = document.getElementById("dividir");
+        dividir.addEventListener("click",nn,false);
+        r = document.getElementById("r");
+        r.addEventListener("click",borrar,false);
+        siete = document.getElementById("siete");
+        siete.addEventListener("click",nn,false);
+        ocho = document.getElementById("ocho");
+        ocho.addEventListener("click",nn,false);
+//--------------------------------------------------------------
+        nueve = document.getElementById("nueve");
+        nueve.addEventListener("click",nn,false);
+        seis = document.getElementById("seis");
+        seis.addEventListener("click",nn,false);
+
+        cinco = document.getElementById("cinco");
+        cinco.addEventListener("click",nn,false);
+        cuatro = document.getElementById("cuatro");
+        cuatro.addEventListener("click",nn,false);
+
+        tres = document.getElementById("tres");
+        tres.addEventListener("click",nn,false);
+        dos = document.getElementById("dos");
+        dos.addEventListener("click",nn,false);
+
+        uno = document.getElementById("uno");
+        uno.addEventListener("click",nn,false);
+        cero = document.getElementById("cero");
+        cero.addEventListener("click",nn,false);
+
+//------------------------------------------------------------
+
+        mas = document.getElementById("sumar");
+        mas.addEventListener("click",nn,false);
+        multiplicacion = document.getElementById("multiplicacion");
+        multiplicacion.addEventListener("click",nn,false);
+        }
+//Aqui empieza la funcion operacion...
+//..................................................................
+function operacion(e){
+    sonido.play();
+if(count==1){
+num1 = parseInt(v2);}
+else if(count==2){
+num2 = parseInt(v2);
+count++;}
+else if(count==3 && e.target==igual && clave=="sumar"){
+    sonido1.play();
+    var num3 = 0;
+    num3 = num1+num2;
+    sonido1.play();
+
+texto = document.getElementById("texto").value=num3;
+sonido1.play();}
+else if(count==3 && e.target==igual && clave=="multiplicacion"){
+    sonido1.play();
+    var num3 = 0;
+    num3 = num1*num2;
+texto = document.getElementById("texto").value=num3;}
+else if(count==3 && e.target==igual && clave=="dividir"){
+    sonido1.play();
+    var num3 = 0;
+    num3 = num1/num2;
+texto = document.getElementById("texto").value=num3;}
+else if(count==3 && e.target==igual && clave=="restar"){
+   sonido1.play();
+    var num3 = 0;
+    num3 = num1-num2;
+    texto = document.getElementById("texto").value=num3;}
+}//Aqui empiezas la funcion numeros
+//....................................................................
+function nn(e){
+if(e.target == siete){
+    sonido.play();
+v1=document.getElementById("siete").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target==ocho){
+        sonido.play();
+        v1 = document.getElementById("ocho").value;
+        texto=document.getElementById("texto").value+=v1;}
+   if(e.target==mas ){
+    sonido.play();
+v2 = texto;
+    document.getElementById("texto").value="";
+count++;
+clave = "sumar";
+operacion();}
+    if(e.target==multiplicacion ){
+        sonido.play();
+v2 = texto;
+document.getElementById("texto").value="";
+count++;
+clave = "multiplicacion";
+operacion();}
+if(e.target==dividir ){
+    sonido.play();
+v2 = texto;
+document.getElementById("texto").value="";
+count++;
+clave = "dividir";
+operacion();}
+if(e.target==restar ){
+    sonido.play();
+v2 = texto;
+document.getElementById("texto").value="";
+count++;
+clave = "restar";
+operacion();}
+//--------------------------------------------------
+if(e.target == nueve){
+    sonido.play();
+v1=document.getElementById("nueve").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == seis){
+        sonido.play();
+v1=document.getElementById("seis").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == cinco){
+        sonido.play();
+v1=document.getElementById("cinco").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == cuatro){
+        sonido.play();
+v1=document.getElementById("cuatro").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == tres){
+        sonido.play();
+v1=document.getElementById("tres").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == dos){
+        sonido.play();
+v1=document.getElementById("dos").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == uno){
+        sonido.play();
+v1=document.getElementById("uno").value;
+    texto=document.getElementById("texto").value+=v1;}
+    if(e.target == cero){
+        sonido.play();
+v1=document.getElementById("cero").value;
+    texto=document.getElementById("texto").value+=v1;}
+
+
+
+//---------------------------------------------------
+
+
+
+}//Aqui va la operacion borrr
+//...................................................
+function borrar(){
+    sonido.play();
+    document.getElementById("texto").value="";
+    count=0;}
+window.addEventListener("load",f1,false);
+      </script>
+<input type="submit" name="r" id="r" value="Borrador{C}">
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+    function comenzar(){
+
+         boton = document.getElementById("boton1");
+        boton.addEventListener("click",f1,false);
+    }
+    function f1(w){
+        textoNombre =document.getElementById("textoNombre").value;
+        textoApellido =document.getElementById("textoApellido").value;
+         textoEdad =document.getElementById("textoEdad").value;
+        var clave =false;
+        var count =0;
+        if(textoNombre.length==4){
+            textoNombre =document.getElementById("textoNombre").value="*****";
+        }
+        else{
+            alert("Lectura Incorrecta");
+            textoNombre =document.getElementById("textoNombre").value="";
+        }
+    }
+
+    window.addEventListener("load",comenzar,false);
+</script>
+
+
+<style>
+#div1{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    border: 3px black solid;
+    background-color: coral;
+    border-radius: 20px;
+    padding: 3px;
+    margin-left: 500px;
+}
+label{
+    font-family: Arial Black;
+}
+input{
+    background: cyan;
+}
+#boton1{
+    border: 3px black solid;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-family: Arial Black;
+}
+
+</style>
+</head>
+<body>
+<div id="div1">
+    <label id="labelNombre">Nombre</label>
+    <input type="text" name="textoNombre" id="textoNombre">
+    <label id="labelApellido">Apellido</label>
+    <input type="text" name="textoApellido" id="textoApellido">
+    <label id="labelEdad">Edad</label>
+    <input type="text" name="textoEdad" id="textoEdad">
+    <button id="boton1">Aceptar</button>
+</div>
+
+</body>
+
+
+</html>
