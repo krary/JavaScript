@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+<script>
+function comenzar(){
+   var elemento=document.getElementById("lienzo");
+   lienzo=elemento.getContext("2d");
+   var circular=lienzo.createRadialGradient(0,250,50,0,150,250);
+   circular.ColorStop(0,"red");
+   circular.ColorStop(1,"green");
+   lienzo.fillStyle=circular;
+   
+
+}
+
+    window.addEventListener("load",comenzar,false);
+</script>
+
+</head>
+<body>
+<section id="dibujo">
+    <canvas id="lienzo"  width="500" height="300">
+        
+
+
+    </canvas>
+
+
+</section>
+
+
+</body>
+
+
+
+
+</html>

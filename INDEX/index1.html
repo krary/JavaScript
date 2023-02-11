@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+var base_datos;
+function funcion2(){
+    alert("Este es un mensaje del programador");
+
+}
+
+
+function funcion1(){
+    var section1 = document.getElementById("section2");
+    var boton1 = document.getElementById("boton1");
+    boton1.addEventListener("click",funcion2,false);
+
+    var pedido = indexedDB.open("MiPrimerBD1");
+    pedido.onsuccess = function(e){
+             base_datos = e.target.result;
+    }
+    pedido.onupgradeneeded = function(e){
+        base_datos = e.target.result;
+        base_datos.createObjectStore("personas" , {keyPath :"clave"});
+    }
+
+}
+function funcion2(){
+    var clave = document.getElementById("clave").value;
+    var titulo = document.getElementById("titulo").value;
+    var year = document.getElementById("year").value;
+
+    var transaccion = base_datos.transaction(["personas"],"readwrite");
+    var almacen = transaccion.ObjectStore("personas");
+    var agregar = almacen.add({clave : clave , titulo : titulo,year:year});
+}
+
+
+window.addEventListener("load",funcion1,false);
+
+
+</script>
+<style>
+#section1{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    padding: 3px;
+    border: 13px black solid;
+    border-radius: 15px;
+    background-color: coral;
+}
+#section2{
+    width: 500px;
+    height: 100px;
+    margin:auto;
+    border: 3px black dashed;
+    margin-top: 5px;
+    background-color: blueviolet;
+}
+body{
+    background-color: chartreuse;
+}
+
+
+
+</style>
+</head>
+<body>
+<section id="section1">
+    <form>
+        Clave: &nbsp; <input type="texto" name="texto" id="texto"><br>
+        Titulo: &nbsp; <input type="texto" name="titulo" id="titulo"><br>
+        Year: &nbsp; <input type="texto" name="year" id="year"><br>
+        <button id="boton1"> Aceptar</button>
+        </form>
+
+</section>
+<section id="section2">
+    Aqui se muestra el Resultado..
+</section>
+
+</body>
+
+
+
+
+
+</html>

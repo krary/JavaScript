@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+#section2{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border: 3px black solid;
+    color: greenyellow;
+}
+body{
+    background-image: url("matrix.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+p{
+    color: greenyellow;
+}
+input{
+    margin-top: 19px;
+}
+</style>
+<script>
+    var section2;
+    var boton1;
+    var texto;
+function comenzar(){
+section2 = document.getElementById("section2");
+texto = document.getElementById("texto");
+boton1.addEventListener("click",crear,false);
+
+navigator.webkitPersistentStorage.requestQuota(5*1024*1024, acceso);
+
+}
+function acceso(){
+   window.webkitRequestFileSystem(PERSISTENT,5*1024*1024,crearsis,errores);
+
+}
+function crearsis(systema){
+espacio = systema.root;
+ruta = "";
+mostrar();
+}
+function crear(){
+    var nombre = document.getElementById("texto").value;
+    if((nombre!=""){
+        espacio.getFile(nombre,{create:true, exclusive:false},mostrar, errores);
+    }
+}
+function mostrar(entrada){
+document.getElementById("texto").value="";
+section1.innerHTML = "EXITO";
+section1.innerHTML += "Nombre " + entrada.name + "<br>" + "Ruta ";
+section1.innerHTML += "Ruta " + entrada.fullpath + "<br>";
+}
+function errores(){
+    alert("Ha habido un erro en el system ..");
+}
+window.addEventListener("load",comenzar,false);
+</script>
+</head>
+
+<body>
+<section id="section1">
+    <div>
+        <form id="zonaformulario">
+            <br><p>Nombre</p>
+            <input type="text" name="texto" id="texto"><br>
+            <input type="submit" name="boton1" id="boton1" value="Aceptar">
+        </form>
+    </div>
+</section>
+<section id="section2">
+    No hay informacion disponible..
+</section>
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

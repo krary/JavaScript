@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=""UTF-8"/>
+<style>
+section{
+    width: 1200px;
+    height: 959px;
+    background-color: red;
+    margin: auto;
+}
+
+
+
+</style>
+<header>
+    <img src="C:/Users/Usuario/3D Objects/Nueva carpeta/Imagenes/Captura.PNG"/>
+
+</header>
+<script>
+function comenzar(){
+    var variable=document.getElementById("micanvas");
+    micanvas=variable.getContext("2d");
+    micanvas.font="bold 32px Ariel";
+    micanvas.textAlign="start";
+    micanvas.fillText("Bueno pues hoy ha sido un dia muy prodictivo",100,100);
+    micanvas.translate(13,19);
+    micanvas.scale(3,1);
+    micanvas.fillText("Bueno pues hoy ha sido un dia muy prodictivo",100,100);
+ 
+
+
+
+}
+
+
+
+    window.addEventListener("load",comenzar,false);
+</script>
+
+
+
+
+</head>
+<body>
+
+<section>
+    <img src="C:/Users/Usuario/3D Objects/Nueva carpeta/Imagenes/cyber.jpg"/>
+<canvas id="micanvas" width="1200" height="959">
+
+
+</canvas>
+
+</section>
+
+
+
+</body>
+
+
+
+
+</html>

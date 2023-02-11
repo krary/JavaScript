@@ -1,0 +1,17 @@
+body{
+    background-color:yellowgreen;
+}
+#azul{
+    background-color:blue;
+    float: left;
+}
+#verde{
+    background-color: yellow;
+    float: left;
+}
+#gris{
+    background-color: gray  ;
+}
+li{
+    display: inline;
+}

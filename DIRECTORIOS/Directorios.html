@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body{
+    background-image: url("matrix.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+#zonadatos{
+    width: 300px;
+    height: 300px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: greenyellow;
+    margin: auto;
+    margin-top: 2px;
+}
+#zonaformulario{
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}
+p{
+  color: greenyellow;
+}
+</style>
+
+
+
+<script>
+    var zonadatos;
+    var archivos;
+function comenzar(){
+      zonadatos = document.getElementById("zonadatos");
+      archivos = document.getElementById("archivos");
+     archivos.addEventListener("change",procesar,false);
+
+}
+function procesar(e){
+var archivos = e.target.files;
+zonadatos.innerHTML = "";
+var mi_archivo = archivos[0];
+alert(mi_archivo.type);
+if(mi_archivo.type.match(/image/)){
+alert("Selecciona una imagen porfavor");
+}
+else{
+    zonadatos.innerHTML += "Nombre del archivo : " + mi_archivo.name + "<br>";
+    zonadatos.innerHTML += "Tamña del archivo : "  + mi_archivo.size/1024 + "bytes <br>";
+}
+
+var lector = new FileReader();
+
+
+lector.readAsDataURL(mi_archivo);
+lector.addEventListener("load",mostrar,false);
+}
+function mostrar(e){
+var resultado = e.target.result;
+zonadatos.innerHTML +="<img src='" + resultado + "' width='85%'>";
+}
+window.addEventListener("load",comenzar,false);
+</script>
+</head>
+
+<body>
+<div id="contenedor">
+
+    <section id="zonaformulario">
+        <form name="formulario" class="form-group  container">
+            <p>Archivos : &nbsp;<input type="file" name="archivos" id="archivos"></p>
+        </form>
+    </section>
+    <section id="zonadatos">
+        No hay informacion...
+    </section>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

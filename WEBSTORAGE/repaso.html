@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+function f1(){
+    var boton1 = document.getElementById("boton1");
+    boton1.addEventListener("click",f2,false);
+
+}
+function f2(){
+  var clave = document.getElementById("clave").value;
+  var valor = document.getElementById("valor").value;
+
+  sessionStorage.setItem(clave,valor);
+
+  f3(clave);
+
+}
+function f3(clave){
+
+var variable = document.getElementById("section2");
+var info = sessionStorage.getItem(clave);
+
+variableinnerHTML = info;
+
+}
+
+
+window.addEventListener("load",f1,false);
+
+</script>
+<style>
+#section1{
+    width: 200px;
+    margin: auto;
+
+    border: 3px black solid;
+}
+#section2{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border: 3px black dashed;
+    margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+<section id="section1">
+<form>
+Clave : &nbsp;<input type="text" id="texto">
+Valor: &nbsp;<textarea id="valor"></textarea><br>
+<input type="button" id="boton1" value="Aceptar">
+
+
+</form>
+
+</section>
+<section id="section2">
+
+</section>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

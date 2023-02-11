@@ -1,0 +1,25 @@
+#contenedor{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border: 3px black solid;
+}
+#clave{
+    margin-left: 10px;
+    padding: 3px;
+}
+#valor{
+    margin-left: 10px;
+    padding: 3px;
+
+}
+#zona_datos{
+
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 29px;
+    background-color: cyan;
+    border: 3px black solid;
+
+}

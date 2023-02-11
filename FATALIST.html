@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   table{
+    text-align: center;
+    background-color: cyan;
+    width:50%;
+    margin: auto;
+ border: 2px black solid;
+  }
+   #tdd{
+    padding: 3px ;
+    border: 3px black solid;
+    background-color: yellow;
+   }
+#nombre{
+    background-color: yellow;
+}
+#apellido{
+    background-color: yellow;
+}
+
+</style>
+<script>
+    var nombre;
+    var apellido;
+function comenzar(){
+    nombre=document.getElementById("nombre");
+    apellido=document.getElementById("apellido");
+    //var edad=document.getElementById("edad");
+    nombre.addEventListener("input",validar,false);
+    apellido.addEventListener("input",validar,false);
+    validar();
+}
+function validar(){
+  if(nombre.value=="" && apellido.value==""){
+       nombre.setCustomValidity("Introduce nombre o Apellido");
+       nombre.style.background="#FFDDDD";
+       apellido.style.background="#FFDDDD";
+  }
+  else{
+    nombre.setCustomValidity("");
+    nombre.style.background="#FFFFFF";
+       apellido.style.background="#FFFFFF";
+
+  }
+}
+
+    window.addEventListener("load",comenzar,false);
+</script>
+
+</head>
+<form name="formulario" id="forumulario" method="get" autocomplete="off">
+<table><tr><td id="tdd">
+    Nombre: </td><td><input type="text" name="nombre" id="nombre"></td></tr>
+    <tr><td id="tdd">
+    Apellido: </td><td><input type="text" name="apellido" id="apellido"></td></tr>
+    <tr><td id="tdd">
+    Edad: </td><td><input type="number" name="edad" id="edad" min="1" max="100"></td></tr>
+    <tr><td>
+    <input type="submit" value="Aceptar"></td></tr>
+     </table>
+
+</table>
+
+</form>
+
+
+
+<body>
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

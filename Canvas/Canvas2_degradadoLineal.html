@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+#micanvas{
+
+    background-color: blue;
+}
+section{
+    width: 500px;
+    height: 300px;
+    margin:auto;
+    padding: 15px;
+}
+
+
+</style>
+<script>
+
+var cuadro;
+function pintar(){
+    cuadro=document.getElementById("micanvas");
+    micanvas=cuadro.getContext("2d");
+    /*var degradado=micanvas.createLinearGradient(0,0,500,300);
+    degradado.addColorStop(0,"red",);
+    degradado.addColorStop(1,"green");
+    micanvas.fillStyle=degradado; 
+    micanvas.fillRect(0,0,500,300);         
+   */
+var radial=micanvas.createRadialGradient(250,150,50,250,150,300);
+radial.addColorStop(0,"green");
+radial.addColorStop(1,"red");
+micanvas.fillStyle=radial;
+micanvas.fillRect(0,0,500,300);
+
+}
+window.addEventListener("load",pintar,false);
+
+
+</script>
+
+</head>
+<body>
+<section>
+
+<canvas id="micanvas" width="500" height="300">
+
+
+
+</canvas>
+
+
+</section>
+
+</body>
+
+</html>

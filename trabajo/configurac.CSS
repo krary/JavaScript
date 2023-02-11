@@ -1,0 +1,20 @@
+#centralizando{
+    width: 480px;
+    background-color: yellow;
+    margin: 20px auto;
+    padding:3px
+
+}
+#centralizando1{
+    background-color:rgb(80, 226, 43);
+    float:left;
+}
+#centralizando2{
+    float:right;
+    background-color: black;
+
+}
+#boton1{
+    background-color: red;
+    font-feature-settings:  ;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="iso-8559-1"/>
+<meta name="keyword" content="Eventos"/>
+<meta name="description" content="Eventos"/>
+<link rel="stylesheet" href="file.CSS"/>
+
+<title>Manejando Eventos Lisandro</title>
+<script>
+function mensaje(){
+    alert("Esta es la imagen");
+}
+function mensaje2(){
+    alrt("Este es el parrafo");
+}
+function evento(){
+var imagen=document.getElementsByTagName("img")[0];
+var parrafo=document.getElementsByTagName("p")[0];
+imagen.addEventListener("click",mensaje,false);
+
+parrafo.addEventListener("click",mensaje2,false);
+}
+window.addEventListener("load",evento,false);
+
+
+</script>
+
+
+
+
+
+</head>
+<style>
+#colores{
+    background-color: royalblue;
+}
+
+
+
+#letras{
+   margin: 10px auto;
+        
+   padding: 5px 12px 3px 3px;
+   
+   text-align: center;
+   border: 3px solid black;
+   box-shadow: gray 10px 20px 10px;
+   border-radius: 10px 10px 10px 10px;
+   
+}
+#fondo{
+    background-color: aqua;
+}
+</style>
+
+
+<body id="colores">
+<header id="fondo">
+    <h1 id="letras">Manejando Eventos</h1>
+</header>
+<p><img src="1.jpg"></p>
+<p>FLOR DE COLORES</p>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+<script>
+    var variable;
+    var texto;
+    var ball;
+
+function mensaje(){
+if(texto.style.display === "none"){
+    texto.style.display = "block";
+}
+else{
+    texto.style.display = "none";
+}
+}
+function comenzar(){
+    variable = document.getElementById("boton1");
+    variable.addEventListener("click",mensaje,false);
+   texto = document.getElementById("dev1.0");
+
+}
+
+
+window.addEventListener("load",comenzar,false);
+
+</script>
+
+<style>
+    p{  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: greenyellow;
+        margin-top: 0px;
+    }
+body{
+    color: white;
+    background-image: url("hack.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#div1{
+    width: 500px;
+    height: 100px;
+    display: inline-block;
+    margin-left: 800px;
+    margin-top: 0px;
+}
+#texto{
+    background-color: black;
+    color: greenyellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#boton1{
+      width: 70px;
+      height: 30px;
+      margin-left: 799px;
+      margin-top: 10px;
+      color: greenyellow;
+      background: black;
+      border: 3px greenyellow solid;
+}
+#div{
+    width: 200px;
+    height: 200px;
+    margin-top: 2px;
+}
+
+</style>
+
+
+</head>
+<body>
+    <div class="form-group container family-group" id="div1" >
+        <label id="labelNombre">
+            Nombres1:
+        </label>
+            <input type="text" name="texto" id="texto"><br>
+
+
+
+
+        </div>
+        <div id="div2">
+         <button type="button" id="boton1">
+        Aceptar
+       </button>
+
+        </div>
+        <div id="dev1.0" style="display: none;">
+    <p>Esto solo es una prueba</p>
+    <p>de lo que puedo yo hacer en este lenguaje</p>
+    <p>de programacion.Las dudas quedan sanjadas</p>
+    <p>y mas importante aun esta</p>
+    <p>el hecho que hay un aumento</p>
+    <p>exponencial en la mejora de la </p>
+    <p>practica de la programacion</p>
+    <p>esto solo es un modelo de prueba</p>
+    <p>aun asi me falta mucho porque en los aspectos</p>
+    <p>tecnicos es donde necesito mas mejoras</p>
+    <p>Esto solo es una prueba</p>
+    <p>Y si puedo yo seguir escribiendo pero al parecer el orden</p>
+    <p>si interesa en el css de la programacion.</p>
+</div>
+</body>
+
+
+
+
+
+
+</html>

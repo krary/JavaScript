@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8"/>
+    <script>
+function funcion1(){
+   var variable= document.getElementById("boton1");
+   variable.addEventListener("click",funcion2);
+
+
+
+}
+function funcion2(){
+ navigator.geolocation.getCurrentPosition(funcion3);
+
+}
+function funcion3(posicion){
+    var variable1 = document.getElementById("section1");
+    var info = "";
+    info += "Latitud : " + posicion.coords.latitude;
+    variable1.innerHTML = info;
+
+}
+window.addEventListener("load",funcion1,false);
+
+
+    </script>
+</head>
+<body>
+
+<section id="section1">
+<button id="boton1">
+obtener localizacion
+
+</button>
+
+</section>
+<section>
+
+
+
+
+</section>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

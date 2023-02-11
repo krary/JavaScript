@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charse="UTF-8"/>
+
+<script>
+function comenzar(){
+    var vx=document.getElementById("variableCanvas");
+    var variableCanvas=vx.getContext("2d");
+    
+    variableCanvas.beginPath();
+    variableCanvas.arc(100,100,50,0,Math.PI,true);
+    variableCanvas.fill();
+
+}
+
+window.addEventListener("load",comenzar,false);
+</script>
+<style>
+#seccion{
+width: 1200px;
+height: 950px;
+background-color: gray;
+margin: auto;
+padding: 10px;
+
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+<section id="seccion">
+    <canvas id="variableCanvas" width="1200" height="950">
+
+
+
+    </canvas>
+
+
+
+</section>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#lienzo{
+    background-color: blueviolet;
+
+}
+section{
+    width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+
+</style>
+<script>
+    var elemento;
+    function comenzar(){
+         elemento=document.getElementById("lienzo");
+         lienzo=elemento.getContext("2d");
+         lienzo.strokeStyle="pink";
+         lienzo.fillStyle="pink";
+         lienzo.globalAlpha=0.3;
+         lienzo.strokeRect(110,110,100,100);
+         lienzo.fillRect(150,150,25,25);
+         
+    }
+
+
+    window.addEventListener("load",comenzar,false);
+</script>
+</head>
+<body>
+
+<section>
+<canvas id="lienzo" width="500" height="300">
+    su navegador no soporta el canvas de html5
+
+
+</canvas>
+
+
+</section>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

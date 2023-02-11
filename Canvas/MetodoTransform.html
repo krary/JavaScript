@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+#section1{
+    width: 1000px;
+    height: 500px;
+    margin:auto;
+    padding: 3px;
+    border: 5px black solid;
+    background-color: cyan;
+}
+
+
+
+</style>
+<script>
+    function funcion(){
+        var element=document.getElementById("canvas1");
+        canvas1=element.getContext("2d");
+        canvas1.transform(1,0,0,1,0,0);
+        //1=anchoT : 2=rotaT 3=InclDerecha : 4=altoT : 5=coordX : 6=coordY
+        canvas1.font="bold 23px Courier";
+        canvas1.fillText("Hola alumnos",59,59);
+    }
+
+
+window.addEventListener("load",funcion,false);
+</script>
+
+</head>
+
+<body>
+<section id="section1">
+<canvas id="canvas1" width="1000" height="500">
+
+
+
+</canvas>
+
+</section>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

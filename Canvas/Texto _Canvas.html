@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script>
+function comenzar(){
+    var texto=document.getElementById("micanvas");
+    micanvas=texto.getContext("2d");
+    micanvas.font="bold 36px verdana";
+     micanvas.textAlign="start";
+     micanvas.textBaseline="top";
+     micanvas.fillText("Este es otro texto experimental",100,100);
+     micanvas.moveTo(100,100);
+      micanvas.lineTo(200,100);
+      micanvas.stroke();
+      var medida=micanvas.measureText("Este es otro texto experimental");
+      micanvas.strokeRect(100,100,medida.width+114,49);
+    }
+
+
+window.addEventListener("load",comenzar,false);
+</script>
+<style>
+#secttion{
+    width: 1200px;
+    height: 950;
+    border: 3px black dashed;
+    margin: auto;
+    padding: 19px;
+}
+
+
+</style>
+</head>
+<body>
+<section id="secttion">
+<canvas id="micanvas" width="1200" height="950">
+
+</canvas>
+
+
+</section>
+
+
+
+
+</body>
+
+
+
+</html>

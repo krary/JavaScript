@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8"/>
+
+    <style>
+#section1{
+    width: 1200;
+    height: 600px;
+    border: 3px black solid;
+}
+    
+    
+    </style>
+    <script>
+var i=0;
+var estado="bajando";
+var arriba=i;
+function funcion(){
+      var variable=document.getElementById("canvas1");
+      canvas1=variable.getContext("2d");
+            setInterval(animacion,200);
+     }
+     function animacion(){
+        if(i<550 && estado=="bajando"){
+        canvas1.clearRect(0,0,1200,600);
+        canvas1.beginPath();
+      canvas1.arc(500,i,40,Math.PI*2,false);
+      canvas1.fill(); 
+      i+=50; } 
+      if(i==550){
+       arriba+=50;
+        estado="subiendo";
+       
+
+      }
+      if(i>=arriba && estado=="subiendo"){
+      
+        
+         canvas1.clearRect(0,0,1200,600);
+        canvas1.beginPath();
+      canvas1.arc(500,i,40,Math.PI*2,false);
+      canvas1.fill(); 
+      i-=50;
+      }
+      if(i==arriba){
+        estado="bajando";
+      }
+     
+     }
+
+
+window.addEventListener("load",funcion,false);
+    </script>
+</head>
+<body>
+
+  <section id="section1">
+     <canvas id="canvas1" width="1200" height="600">
+
+
+     </canvas>
+
+  </section>
+
+
+
+
+</body>
+
+
+
+
+</html>

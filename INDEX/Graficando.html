@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#canvas1{
+    background-image: url("hack.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    color: greenyellow;
+
+}
+body{
+    background-image: url("cyber.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+#canvas1{
+    margin: auto;
+}
+
+
+</style>
+<script>
+    var variable;
+const reconocimiento = new webkitSpeechRecognition();
+reconocimiento.lang = "es-ES";
+
+reconocimiento.start();
+reconocimiento.addEventListener("result",event=> {
+    const transcript = event.results[0][0].transcript;
+
+    document.body.innerHTML += transcript});
+function mensaje(){
+    if(variable.style.display === "none"){
+        variable.style.display = "block";
+    }
+    else{
+        variable.style.display = "none";
+    }
+}
+
+    function comenzar(){
+     variable = document.getElementById("canvas1");
+     var boton = document.getElementById("boton1");
+    boton.addEventListener("click",mensaje,false);
+}
+    window.addEventListener("load",comenzar,false);
+</script>
+
+
+
+</head>
+
+<body>
+<button id="boton1"> Aceptar Canvas</button>
+<canvas style="display: none;" id="canvas1" width="200" height="200"></canvas>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>
