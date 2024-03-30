@@ -5,7 +5,7 @@ const server = http.createServer(app);
 
 app.get('/',(req,res)=>{
 
-var variable_raiz= __dirname+"\\"+"plantilla.html";
+var variable_raiz= __dirname+"\\"+"plantilla_2.html";
 res.sendFile(variable_raiz);
 })
 
