@@ -73,7 +73,29 @@
 
     <form id="message-form">
         <input type="text" id="message-input" placeholder="Escribe un mensaje...">
-        <input type="submit" value="Enviar">
+        <input id="botonEnviar" type="submit" value="Enviar">
     </form>
 </body>
+<script src="http://localhost:4000/socket.io/socket.io.js">
+
+</script>
+<script>
+let socket = io()
+const campo = document.getElementById("message-input")
+const formulario = document.getElementById("message-form")
+
+formulario.addEventListener('submit',(event)=>{
+    event.preventDefault()
+    if(campo.value){
+        socket.emit('chat',campo.value)
+        campo.value=''
+    }
+})
+
+
+
+
+
+
+</script>
 </html>
